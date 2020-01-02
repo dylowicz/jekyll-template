@@ -347,7 +347,7 @@ nav {
 
 #site-footer {
   width: 100%;
-  text-align: center;
+  text-align: left;
 
   >.container {
     border-top: 1px solid $lighterGray;
@@ -377,24 +377,24 @@ nav {
 
   &.primary-button {
     color: $lightestGray;
-    background-color: $gray;
-    border: 2px solid $gray;
+    background-color: $darkerGray;
+    border: 2px solid $darkerGray;
 
     &:hover, &:active {
-      background-color: $darkerGray !important;
-      border: 2px solid $darkerGray !important;
+      background-color: $gray !important;
+      border: 2px solid $gray !important;
     }
   }
 
   &.secondary-button {
-    color: $gray;
+    color: $darkerGray;
     background-color: inherit;
-    border: 2px solid $gray;
+    border: 2px solid $darkerGray;
     font-weight: 400;
 
     &:hover, &:active {
-      color: $darkerGray;
-      border: 2px solid $darkerGray;
+      color: $gray;
+      border: 2px solid $gray;
     }
   }
 
