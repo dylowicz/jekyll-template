@@ -1,0 +1,23 @@
+---
+layout: default
+
+description: "A page about me"
+
+header: "Hey there"
+subtitle: "This is my page."
+---
+
+<div id="wrapper-header" class="home">
+  <div class="container">
+    {% include navigation.html class="" %}
+  </div>
+</div>
+
+<div id="wrapper-content" role="main" class="home">
+  {% include header.html class="home" %}
+  <section id="page-content">
+    <div class="container">
+      <a href="/blog/" class="button primary-button">Read blog &rarr;</a>
+    </div>
+  </section>
+</div>

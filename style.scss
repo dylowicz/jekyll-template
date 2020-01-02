@@ -1,0 +1,448 @@
+---
+---
+
+//
+// IMPORTS
+//
+
+@import "reset";
+@import "variables";
+// More imports are the bottom of this file
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font: $smaller $openSans;
+  line-height: 1.4;
+	background: $white;
+  color: $darkerGray;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeLegibility;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 840px;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $roboto;
+  color: $darkerGray;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 1em 0 15px;
+  padding: 0;
+}
+
+h1 {
+  font-size: $bigger;
+  a {
+    color: inherit;
+  }
+
+  @include mobile {
+    font-size: $big;
+  }
+}
+
+h2 {
+  font-size: $big;
+
+  @include mobile {
+    font-size: $medium;
+  }
+}
+
+h3 {
+  font-size: $medium;
+
+  @include mobile {
+    font-size: $small;
+  }
+}
+
+h4 {
+  font-size: $small;
+  color: $lightGray;
+
+  @include mobile {
+    font-size: $smaller;
+  }
+}
+
+p {
+  margin: 15px 0;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+	cursor: pointer;
+  transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out, opacity .1s ease-in-out;
+  &:hover, &:active {
+    color: $lightGray;
+  }
+}
+
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
+.date {
+  font-size: $smallest;
+  color: $lightGray;
+}
+
+// Nicolas Gallagher's micro clearfix hack
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+
+#wrapper-page {
+  position: relative;
+  min-height: 100%;
+  min-width: 320px;
+}
+
+#wrapper-content {
+  // &.home {
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 0;
+  //   right: 0;
+  //   transform: translateY(-50%);
+  //
+  //   @include mobile {
+  //     top: 55%;
+  //   }
+  // }
+
+  &.post {
+    margin-top: 20px;
+  }
+}
+
+#wrapper-header {
+  color: $lightestGray;
+  background: transparent;
+
+  @include mobile {
+    padding-bottom: 20px;
+    margin-bottom: 0;
+
+    &.page, &.post {
+      padding-top: 62px;
+    }
+  }
+}
+
+#site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+
+  @include mobile {
+    &.page, &.post {
+      position: fixed;
+      background-color: $white;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid $lighterGray;
+      // box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &.home {
+    background-color: inherit;
+  }
+}
+
+#site-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include mobile {
+    float: left;
+  }
+}
+
+#site-avatar {
+  margin-right: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 3px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+}
+
+#site-name {
+  margin: 0;
+  color: $darkerGray;
+  cursor: pointer;
+  font-family: $rubik;
+  font-weight: 400;
+  font-size: $smaller;
+  letter-spacing: 1.4px;
+  word-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#site-navigation {
+  margin: auto;
+  margin-right: 0;
+
+  @include mobile {
+    float: right;
+    font-size: $smallest;
+  }
+
+  @include mobileSmall {
+    top: 35px;
+  }
+}
+
+// Page
+
+#page-info {
+  padding-top: 50px;
+
+  @include mobile {
+    padding-top: 35px;
+  }
+}
+
+#page-title {
+  color: $darkerGray;
+  font-family: $rubik;
+  font-weight: 700;
+  font-size: $biggest;
+  letter-spacing: 0.3px;
+  word-spacing: 2px;
+  margin: auto;
+
+  &.page {
+    font-size: $massive;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+
+    @include mobile {
+      font-size: $biggest;
+    }
+
+    @include mobileSmall {
+      font-size: $bigger;
+    }
+  }
+}
+
+#page-subtitle {
+  color: $darkerGray;
+  font-size: $small;
+  font-family: $roboto;
+  letter-spacing: -0.3px;
+
+  @include mobile {
+    font-size: $smaller;
+    text-align: left;
+    padding-right: 20px;
+  }
+}
+
+nav {
+  a {
+    margin-left: 20px;
+    text-align: right;
+    font-family: $rubik;
+    font-size: $tiny;
+    color: $darkerGray;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include mobile {
+      margin: 0 auto;
+      font-weight: 400;
+    }
+  }
+}
+
+#wrapper-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#site-footer {
+  width: 100%;
+  text-align: center;
+
+  >.container {
+    border-top: 1px solid $lighterGray;
+  }
+}
+
+#site-credit {
+  font: $smallest $rubik;
+  color: $lightGray;
+}
+
+// custom implementations
+
+.button {
+  display: inline-block;
+  min-height: 50px;
+  line-height: 45px;
+  padding: 0 25px;
+  border: 2px solid;
+  border-radius: 25px;
+  font-family: $rubik;
+  font-size: $smaller;
+  font-weight: 500;
+  transition: all .15s ease-in-out;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &.primary-button {
+    color: $lightestGray;
+    background-color: $gray;
+    border: 2px solid $gray;
+
+    &:hover, &:active {
+      background-color: $darkerGray !important;
+      border: 2px solid $darkerGray !important;
+    }
+  }
+
+  &.secondary-button {
+    color: $gray;
+    background-color: inherit;
+    border: 2px solid $gray;
+    font-weight: 400;
+
+    &:hover, &:active {
+      color: $darkerGray;
+      border: 2px solid $darkerGray;
+    }
+  }
+
+  &.ternary-button {
+    border: none;
+    font-weight: 400;
+  }
+
+  @include mobile {
+    font-size: $smallest;
+  }
+
+  @include mobileSmall {
+    font-size: $tiny;
+  }
+}
+
+.small-link {
+  font-size: $smallest;
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  background-color: $lighterGray;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.space {
+    margin-left: 1px;
+  }
+
+  @include mobile {
+    height: 7px;
+    width: 7px;
+  }
+
+  @include mobileSmall {
+    height: 5px;
+    width: 5px;
+  }
+}
+
+// custom imports
+
+@import "menu";
+@import "newsletter";
+
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+// @import "svg-icons";

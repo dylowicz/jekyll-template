@@ -1,0 +1,29 @@
+---
+layout: page
+
+custom_css: blog/style.css
+
+title: Blog
+description: "Blog about everything."
+image:
+
+header: Blog
+subtitle: Read to learn.
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post-preview" onclick="location.href='{{ site.baseurl }}{{ post.url }}';">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="date">{{ post.date | date: "%b %e" }} &middot; {{ post.read_time }} min read</div>
+
+      <div class="excerpt">
+        <p>{{ post.excerpt }}</p>
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="small-link">Read more →</a>
+    </article>
+  {% endfor %}
+</div>

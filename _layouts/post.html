@@ -1,0 +1,40 @@
+---
+layout: default
+
+class: post
+---
+
+<div id="wrapper-header" class="post">
+  <div class="container">
+    {% include navigation.html class="post" %}
+  </div>
+</div>
+
+<div id="wrapper-content" role="main" class="post">
+  {% include header.html class="page post" %}
+  <div class="container">
+    <article class="post-content">
+      <a href="/blog/" class="small-link">&larr; Back</a>
+
+      <h1>{{ page.title }}</h1>
+
+      <div class="date">{{ page.date | date: "%b %e" }} · {{ page.read_time }} min read</div>
+
+      {% if page.image %}
+        <div class="image">
+          <img src="{{ page.image }}" alt="{{ page.alt | default: 'image' }}" />
+        </div>
+      {% endif %}
+
+      <div class="entry">{{ content }}</div>
+    </article>
+
+    <div id="wrapper-newsletter">
+      {% include newsletter.html %}
+    </div>
+  </div>
+</div>
+
+<div id="wrapper-footer" class="post">
+  {% include footer.html %}
+</div>

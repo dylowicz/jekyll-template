@@ -1,0 +1,28 @@
+<header id="site-header" class="clearfix {{ include.class }}">
+  <div id="site-logo">
+    {% if include.logo %}
+    <a href="/" id="site-avatar" class="{{ include.class }}">
+      <img src="{{ include.logo }}" alt="Site logo" />
+    </a>
+    {% endif %}
+
+    <h1 id="site-name"><a href="/">{{ site.name }}</a></h1>
+  </div>
+
+  <div id="site-navigation" class="{{ include.class }}">
+    <nav role="navigation" class="{{ include.class }}">
+      <div id="menu-toggle">
+        <input type="checkbox" />
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu" class="{{ include.class }}">
+          <li id="home-link"><a href="{{ site.baseurl }}/" class="nav-link">Home</a></li>
+          <li><a href="{{ site.baseurl }}/blog/" class="nav-link">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
