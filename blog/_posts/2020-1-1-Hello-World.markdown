@@ -12,3 +12,11 @@ read_time: 1
 ---
 
 This is the first article on this page. It simply says Hello World!
+
+{% include image.html url="/blog/assets/seals.jpg" description="Frivolous seals" %}
+
+And continuation of the text
+
+* * *
+
+That's all, seals!
