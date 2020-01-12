@@ -100,6 +100,32 @@
   }
 }
 
+.author-profile {
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+
+  .avatar {
+    margin-right: 15px;
+  }
+
+  .author-profile-content {
+    .author-name {
+      margin: 5px 0;
+    }
+
+    .author-description {
+      margin: 5px 0;
+      color: $gray;
+      font-size: $smallest;
+    }
+
+    .author-profile-social a {
+      margin-right: 10px;
+    }
+  }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
