@@ -15,7 +15,7 @@ This is the first article on this page. It simply says Hello World!
 
 {% include image.html url="/blog/assets/seals.jpg" description="Frivolous seals" %}
 
-And continuation of the text
+And continuation of the text. This paragraph can get lengthy though, in order to thoroughly test how the line break behaves. It's also useful in testing the line height. So, how does it perform now? Do you like how this paragraph looks like?
 
 * * *
 

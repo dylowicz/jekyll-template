@@ -19,8 +19,9 @@ html {
 }
 
 body {
-  font: $smaller $openSans;
-  line-height: 1.4;
+  font: $smaller $helveticaNeue;
+  line-height: 1.625em;
+  letter-spacing: -.003em;
 	background: $white;
   color: $darkerGray;
 
@@ -28,6 +29,10 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
   text-rendering: optimizeLegibility;
+
+  @include mobile {
+    line-height: 1.5em;
+  }
 }
 
 .preload * {
@@ -37,14 +42,18 @@ body {
 .container {
   margin: 0 auto;
   min-width: 320px;
-  max-width: 840px;
+  max-width: 720px;
   padding: 0 20px;
   width: 100%;
   height: 100%;
+
+  @include mobile {
+    padding: 0 15px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $roboto;
+  font-family: $helveticaNeue;
   color: $darkerGray;
   font-weight: 500;
   line-height: 1.2;
@@ -214,8 +223,8 @@ img {
       right: 0;
       border-bottom: 1px solid $lighterGray;
       // box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
@@ -314,7 +323,7 @@ img {
 #page-subtitle {
   color: $darkerGray;
   font-size: $small;
-  font-family: $roboto;
+  font-family: $helveticaNeue;
   letter-spacing: -0.3px;
 
   @include mobile {
@@ -410,10 +419,6 @@ nav {
 
   @include mobile {
     font-size: $smallest;
-  }
-
-  @include mobileSmall {
-    font-size: $tiny;
   }
 }
 
