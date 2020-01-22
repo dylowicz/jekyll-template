@@ -14,18 +14,25 @@
 @import "menu";
 @import "newsletter";
 
+* {
+  box-sizing: border-box;
+}
+
+
 html {
   font-size: 100%;
 }
 
 body {
   font: $smaller $helveticaNeue;
+  font-weight: 400;
   line-height: 1.625em;
   letter-spacing: -.003em;
 	background: $white;
-  color: $darkerGray;
+  color: $black;
 
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
   text-rendering: optimizeLegibility;
@@ -301,7 +308,6 @@ img {
   font-family: $rubik;
   font-weight: 700;
   font-size: $biggest;
-  letter-spacing: 0.3px;
   word-spacing: 2px;
   margin: auto;
 
@@ -324,7 +330,6 @@ img {
   color: $darkerGray;
   font-size: $small;
   font-family: $helveticaNeue;
-  letter-spacing: -0.3px;
 
   @include mobile {
     font-size: $smaller;
@@ -340,13 +345,12 @@ nav {
     font-family: $rubik;
     font-size: $tiny;
     color: $darkerGray;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1.2px;
     text-transform: uppercase;
 
     @include mobile {
       margin: 0 auto;
-      font-weight: 400;
     }
   }
 }
@@ -469,6 +473,22 @@ nav {
   &-big {
     height: 128px;
     width: 128px;
+  }
+}
+
+// social links
+
+.social-links {
+  a {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      padding: 5px;
+    }
   }
 }
 
